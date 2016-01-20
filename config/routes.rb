@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   
-  get 'sessions/new'
 
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
+delete '/logout' => 'sessions#destroy'
 
   
 
@@ -13,6 +13,11 @@ post '/login' => 'sessions#create'
   # You can have the root of your site routed with "root"
    root 'static_pages#home'
    resources :users
+   resources :sessions
+   resources :boats do
+    resources :jobs
+   end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

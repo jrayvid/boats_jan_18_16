@@ -1,0 +1,11 @@
+<h1>this is the edit page for boats</h1>
+
+<%= form_for @boat do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :containers %>
+	<%= f.text_field :containers %>
+	<%= f.label :location %>
+	<%= f.text_field :location %> 
+	<%= f.submit %>
+<% end %>

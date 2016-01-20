@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   
   def show
-  	@user = User.find(params[:id])
+  	@user = current_user
+    @boats = @user.boats
   end
 
   def new
@@ -10,8 +11,15 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.create (user_params)
+    session[:user_id] = @user.id
+    session[:job] = @job
+    p @boat
   	redirect_to @user
   end
+
+
+   
+ end
 
 private
 def user_params
@@ -21,4 +29,3 @@ end
 
 
 
-end

@@ -1,0 +1,20 @@
+<h1>This is the Jobs Page</h1>
+
+<%= form_for [@boat, @job] do |f| %>
+	<%= f.label :new %>
+	<%= f.text_field :new %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :origin %>
+	<%= f.text_field :origin %>
+	<%= f.label :destination %>
+	<%= f.text_field :destination %>
+	<%= f.label :cargo %>
+	<%= f.text_field :cargo %>
+	<%= f.label :containers %>
+	<%= f.text_field :containers %>
+	<%= f.label :price %>
+	<%= f.number_field :price %>  
+	<%= f.submit %>
+
+<% end %> 

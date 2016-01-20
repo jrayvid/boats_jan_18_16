@@ -1,1 +1,21 @@
-<h1>Welcome, <%= @user.username%></h1>
+<h1>Welcome Captain <%= @user.username%></h1>
+
+	<% @boats.each do |boat| %>
+		<p><div class="wrappera1"><h1>Name:</h1><h2><%= boat.name %></h2></div></p>
+		<p><div class="wrappera1"><h1>Containers:</h1><h2><%= boat.containers%></h2></div></p>
+		<p><div class="wrappera1"><h1>Location:</h1> <h2><%= boat.location %></h2></div></p><br>
+
+		<% @job.each do |jobs| %>
+			<%= @job.name %>
+	<% end %>
+
+		<%= link_to "Edit Boat", edit_boat_path%>
+		<%= link_to "Add Job", new_boat_job_path(boat.id) %>
+	<% end %>
+
+<%= link_to "Add Boat", new_boat_path%>
+
+
+
+<%= link_to 'Log Out', logout_path, method: :delete, data: { confirm: "Are You Sure"} %>
+ 

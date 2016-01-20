@@ -1,0 +1,14 @@
+<h1>Add A Boat To Your Inventory</h1>
+
+<%= @user.username %>
+
+<%= form_for @boat do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :containers %>
+	<%= f.text_field :containers %>
+	<%= f.label :location %>
+	<%= f.text_field :location %> 
+	<%= f.submit %>
+
+<% end %> 
