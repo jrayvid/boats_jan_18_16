@@ -1,11 +1,14 @@
 <h1>this is the jobs show page</h1>
 
-<h2><%= @job.name %></h2>
+<% @jobs.each do |job| %>
 
-	<%= @job.name %>
-	<%= @job.origin %>
-	<%= @job.destination %>
-	<%= @job.cargo %>
-	<%= @job.containers %>
-	<%= @job.price %>
-	
+	<%= job.name %>
+	<%= job.origin %>
+	<%= job.destination %>
+	<%= job.cargo %>
+	<%= job.containers %>
+	<%= job.price %>
+<% end %><br>	
+
+
+<%= link_to "Profile Page", user_path %>

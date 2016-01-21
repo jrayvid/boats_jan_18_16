@@ -1,8 +1,8 @@
 <h1>This is the Jobs Page</h1>
 
 <%= form_for [@boat, @job] do |f| %>
-	<%= f.label :new %>
-	<%= f.text_field :new %>
+
+	<%= f.text_field :boat_id, :hidden => true %>
 	<%= f.label :name %>
 	<%= f.text_field :name %>
 	<%= f.label :origin %>
