@@ -5,15 +5,17 @@
 		<p><div class="wrappera1"><h1>Containers:</h1><h2><%= boat.containers%></h2></div></p>
 		<p><div class="wrappera1"><h1>Location:</h1> <h2><%= boat.location %></h2></div></p><br>
 
-		<% @job.each do |jobs| %>
-			<%= @job.name %>
-	<% end %>
 
+		<%= link_to "Job Page", boat_jobs_path(:boat_id) %>
 		<%= link_to "Edit Boat", edit_boat_path%>
 		<%= link_to "Add Job", new_boat_job_path(boat.id) %>
+		<%= link_to "Sink Boat", boat_path(boat.id), method: :delete, data: { confirm: 
+			'Are you sure dumbass?  You can not undo this'} %>
+		
 	<% end %>
 
 <%= link_to "Add Boat", new_boat_path%>
+
 
 
 

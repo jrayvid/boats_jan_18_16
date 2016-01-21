@@ -24,6 +24,15 @@ def update
 	redirect_to @user
 end
 
+def destroy
+	@boat = Boat.find(params[:id])
+	@boat.destroy
+	redirect_to user_path
+end
+def show
+	
+end
+
 private
 def boat_params
 	params.require(:boat).permit(:name, :containers, :location).merge(user_id: @user.id)

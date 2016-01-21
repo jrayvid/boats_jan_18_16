@@ -12,6 +12,11 @@ def create
 end
 def show
 	@job = Job.find(params[:id])
+end
+def index
+	@user = current_user
+	
+
 	
 end
 	
