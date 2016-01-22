@@ -15,6 +15,7 @@ class JobsController < ApplicationController
 	def show
 		@job = Job.find(params[:id])
 		@jobs = Job.all
+		@user = User.find(@job.user_id)
 	end
 	
 	def index
@@ -23,8 +24,9 @@ class JobsController < ApplicationController
 
 	def destroy
 		@job = Job.find(params[:id])
+		@user = User.find(@job.user_id)
 		@job.destroy
-		redirect_to user_path
+		redirect_to user_path(@user.id)
 	end	
 
 	

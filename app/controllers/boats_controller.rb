@@ -35,7 +35,7 @@ end
 
 private
 def boat_params
-	params.require(:boat).permit(:name, :containers, :location).merge(user_id: @user.id)
+	params.require(:boat).permit(:name, :containers, :location, :avatar).merge(user_id: @user.id)
 
 end
 

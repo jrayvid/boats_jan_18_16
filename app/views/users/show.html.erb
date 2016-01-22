@@ -1,9 +1,11 @@
 <h1>Welcome Captain <%= @user.username%></h1>
 
 	<% @boats.each do |boat| %>
-		<p><div class="wrappera1"><h1>Name:</h1><h2><%= boat.name %></h2></div></p>
+
+		<p><div class="wrappera1"><h1>Name:</h1><h2><%= boat.name %></h2></div></p><%= image_tag boat.avatar.url(:medium) %> 
 		<p><div class="wrappera1"><h1>Containers:</h1><h2><%= boat.containers%></h2></div></p>
 		<p><div class="wrappera1"><h1>Location:</h1> <h2><%= boat.location %></h2></div></p><br>
+		
 		<%= boat.job_id %>
 
 
