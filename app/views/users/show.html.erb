@@ -1,23 +1,39 @@
 <h1>Welcome Captain <%= @user.username%></h1>
 
+
+
+
+
+<%= image_tag @user.avatar.url(:medium) %>
+
+
+
+
+
+
 	<% @boats.each do |boat| %>
 
 		<p><div class="wrappera1"><h1>Name:</h1><h2><%= boat.name %></h2></div></p><%= image_tag boat.avatar.url(:medium) %> 
 		<p><div class="wrappera1"><h1>Containers:</h1><h2><%= boat.containers%></h2></div></p>
 		<p><div class="wrappera1"><h1>Location:</h1> <h2><%= boat.location %></h2></div></p><br>
+
 		
 		<%= boat.job_id %>
 
-
+		
 		<%= link_to "Job Page", boat_jobs_path(:boat_id) %>
 		<%= link_to "Edit Boat", edit_boat_path%>
+		<%= link_to "Edit Profile", edit_user_path %>
 		<%= link_to "Add Job", new_boat_job_path(boat.id) %>
 		<%= link_to "Sink Boat", boat_path(boat.id), method: :delete, data: { confirm: 
 			'Are you sure dumbass?  You can not undo this'} %>
 		
 	<% end %>
 
-<%= link_to "Add Boat", new_boat_path%>
+<%= link_to "Add Boat", new_boat_path%><br>
+
+<%= link_to "Delete User", @user, method: :delete, data: { confirm: 
+			'Are you sure dumbass?  You can not undo this'} %>
 
 <h1>Boat/Jobs</h1>
 <% @boats.each do |boat| %>

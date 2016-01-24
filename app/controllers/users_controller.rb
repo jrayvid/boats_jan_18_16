@@ -17,13 +17,28 @@ class UsersController < ApplicationController
   	redirect_to @user
   end
 
+  def edit
+  @user = User.where(params[:user_id]).first
+ 
+  end
+  def update
+    @user = current_user
+    @user = User.where(@user.id).first
+    redirect_to @user
+  end
+
+  def destroy
+  @user = User.find(params[:id])
+  @user.destroy
+  redirect_to login_path
+  end
 
    
  end
 
 private
 def user_params
-	params.require(:user).permit(:name, :username, :password)
+	params.require(:user).permit(:name, :username, :password, :avatar).merge(@user.id)
 end
 
 
