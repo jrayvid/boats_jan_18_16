@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+#bkgrd {
+	background-image: url('/assets/pics/ship1.jpg');
+	background-size: 100%;
+	text-align: center;
+	color: white;
+}
+nav {
+	text-decoration: none;
+}
+#bkgrd1 {
+	background-image: url('/assets/pics/ocean.jpeg');
+	background-size: 100%;
+	text-align: center;
+	color: white;
+}
