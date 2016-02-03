@@ -11,11 +11,15 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.create(user_params)
+    @user = User.create(user_params)
+    if
     session[:user_id] = @user.id
     session[:job] = @job
     p @boat
   	redirect_to @user
+  else
+    redirect_to root_path
+  end
   end
 
   def edit
