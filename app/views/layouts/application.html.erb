@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BoatsJan1816</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<nav>
+		<ul>
+			<h3><%= link_to "home", root_path %>
+			<h3>
+			<h1><%= link_to "sign in", login_path %></h1>
+		</ul>
+
+	</nav>
+
+<%= yield %>
+
+</body>
+</html>
